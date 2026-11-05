@@ -10,7 +10,7 @@ Ce document décrit l'application de blog sous trois angles complémentaires :
 
 ## 1. Architecture
 
-L'application suit une architecture **trois tiers** : un client React, une API REST Express et une base MySQL. Côté API, chaque requête traverse les mêmes couches : **routes → middlewares → contrôleurs → base de données**.
+L'application suit une architecture trois tiers : un client React, une API HTTP / JSON Express (style REST) et une base MySQL en local, MariaDB en production.
 
 ```mermaid
 flowchart LR
@@ -37,7 +37,7 @@ flowchart LR
         Routes --> MW --> Ctrl --> Pool
     end
 
-        subgraph DB["Base de données"]
+    subgraph DB["Base de données"]
         Tables[("MySQL 8 · local (Docker)<br/>MariaDB 11.8 · prod (alwaysdata)<br/><br/>users · articles · comments")]
     end
 
