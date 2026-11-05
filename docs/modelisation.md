@@ -72,7 +72,7 @@ Quatre acteurs. Les deux auteurs héritent des droits de l'utilisateur connecté
 - **Auteur du commentaire** : l'utilisateur connecté qui a écrit un commentaire donné.
 
 ```mermaid
-flowchart LR
+flowchart TB
     V(["👤 Visiteur"])
     U(["👤 Utilisateur connecté"])
     AA(["👤 Auteur de l'article"])
