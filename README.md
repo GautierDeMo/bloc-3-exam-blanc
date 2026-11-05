@@ -6,8 +6,8 @@ Une application de blog complète utilisant Node.js, Express, React (Vite) et My
 
 | Service | Hébergeur | URL |
 | --- | --- | --- |
-| **API** (Express) | Render | `https://bloc-3-exam-blanc-api.onrender.com` |
-| **Site** (React) | Netlify | `https://bloc-3-exam-blanc.netlify.app` |
+| **API** (Express) | Render | [https://bloc-3-exam-blanc-api.onrender.com](https://bloc-3-exam-blanc-api.onrender.com) |
+| **Site** (React) | Netlify | [https://bloc-3-exam-blanc.netlify.app](https://bloc-3-exam-blanc.netlify.app) |
 | **Base de données** (MariaDB) | alwaysdata | _non accessible publiquement_ |
 
 **Pour l'utiliser :**
@@ -54,4 +54,4 @@ Au premier lancement, la base de données est automatiquement peuplée avec un u
 
 ## Cahier des Charges
 
-Le fichier `Cahier des charges - Bloc Blanc 3 SJ2` contient les instructions pour la fonctionnalité à implémenter.
+Le fichier [`Cahier des charges - Bloc Blanc 3 SJ2.pdf`](<Cahier des charges - Bloc Blanc 3 SJ2.pdf>) contient les instructions pour la fonctionnalité à implémenter.
