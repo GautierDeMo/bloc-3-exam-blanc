@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../api/axios';
 import { useAuth } from '../context/AuthContext';
-import { MessageCircle, Send, User, Calendar } from 'lucide-react';
+import { MessageCircle, Send } from 'lucide-react';
+import CommentItem from './CommentItem';
 
 const getComments = async (articleId) => {
     const { data } = await API.get(`/articles/${articleId}/comments`);
@@ -30,6 +31,10 @@ const CommentSection = ({ articleId }) => {
         loadComments();
     }, [articleId]);
 
+    const refreshComments = async () => {
+        setComments(await getComments(articleId));
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const trimmedContent = content.trim();
@@ -41,7 +46,7 @@ const CommentSection = ({ articleId }) => {
         try {
             await API.post(`/articles/${articleId}/comments`, { content: trimmedContent });
             setContent('');
-            setComments(await getComments(articleId));
+            await refreshComments();
         } catch (err) {
             console.error(err);
             setError('Impossible de publier le commentaire.');
@@ -95,26 +100,12 @@ const CommentSection = ({ articleId }) => {
             ) : (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                     {comments.map((comment) => (
-                        <div key={comment.id} className="glass" style={{ padding: '20px' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                                {comment.avatar ? (
-                                    <img
-                                        src={`http://localhost:5000${comment.avatar}`}
-                                        alt={comment.username}
-                                        style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
-                                    />
-                                ) : <User size={20} />}
-                                <div>
-                                    <Link to={`/profile/${comment.user_id}`} style={{ fontWeight: 'bold' }}>
-                                        {comment.username}
-                                    </Link>
-                                    <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                                        <Calendar size={12} /> {new Date(comment.created_at).toLocaleDateString()}
-                                    </div>
-                                </div>
-                            </div>
-                            <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.6' }}>{comment.content}</p>
-                        </div>
+                        <CommentItem
+                            key={comment.id}
+                            comment={comment}
+                            articleId={articleId}
+                            onChange={refreshComments}
+                        />
                     ))}
                 </div>
             )}
