@@ -3,9 +3,9 @@ const { pool } = require('../config/db');
 exports.getAllArticles = async (req, res) => {
     try {
         const [rows] = await pool.query(`
-            SELECT articles.*, users.username, users.avatar 
-            FROM articles 
-            JOIN users ON articles.user_id = users.id 
+            SELECT articles.*, users.username, users.avatar
+            FROM articles
+            JOIN users ON articles.user_id = users.id
             ORDER BY articles.created_at DESC
         `);
         res.json(rows);
@@ -17,9 +17,9 @@ exports.getAllArticles = async (req, res) => {
 exports.getArticleById = async (req, res) => {
     try {
         const [rows] = await pool.query(`
-            SELECT articles.*, users.username, users.avatar 
-            FROM articles 
-            JOIN users ON articles.user_id = users.id 
+            SELECT articles.*, users.username, users.avatar
+            FROM articles
+            JOIN users ON articles.user_id = users.id
             WHERE articles.id = ?
         `, [req.params.id]);
 
