@@ -27,7 +27,7 @@ flowchart LR
         Comp --> Axios
     end
 
-    subgraph API["API REST — Node.js / Express"]
+    subgraph API["API HTTP / JSON — Node.js / Express"]
         direction TB
         Routes["Routes<br/>/api/auth, /api/articles,<br/>/api/articles/:articleId/comments, /api/users"]
         MW["Middlewares<br/>verifyToken (JWT), upload (multer)"]
@@ -37,9 +37,10 @@ flowchart LR
         Routes --> MW --> Ctrl --> Pool
     end
 
-    subgraph DB["MySQL 8 (Docker)"]
-        Tables[("users<br/>articles<br/>comments")]
+        subgraph DB["Base de données"]
+        Tables[("MySQL 8 · local (Docker)<br/>MariaDB 11.8 · prod (alwaysdata)<br/><br/>users · articles · comments")]
     end
+
 
     Axios -->|"HTTP / JSON<br/>Authorization: Bearer token"| Routes
     Pages -.->|images| Static
