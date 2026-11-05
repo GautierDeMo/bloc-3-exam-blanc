@@ -18,7 +18,7 @@ docker-compose up -d
 Depuis la racine du projet :
 
 ```bash
-npm install
+npm run setup
 npm run dev
 ```
 

@@ -6,7 +6,8 @@
   "scripts": {
     "server": "cd server && node server.js",
     "client": "cd client && npm run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "setup": "concurrently 'cd server && npm ci' 'cd client && npm ci' 'npm ci'"
   },
   "keywords": [],
   "author": "",
