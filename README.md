@@ -54,4 +54,4 @@ Au premier lancement, la base de données est automatiquement peuplée avec un u
 
 ## Cahier des Charges
 
-Le fichier `cahier_des_charges_commentaires.md` contient les instructions pour la fonctionnalité à implémenter.
+Le fichier `Cahier des charges - Bloc Blanc 3 SJ2` contient les instructions pour la fonctionnalité à implémenter.
