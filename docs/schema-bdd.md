@@ -1,6 +1,6 @@
 # Schéma de la base de données
 
-Base MySQL 8 `blog_db`, composée de trois tables. La table comments est celle ajoutée pour la fonctionnalité : chaque commentaire est rattaché à son auteur (user_id) et à l'article commenté (article_id).
+Base composée de trois tables : **MySQL 8** en local (`blog_db`, conteneur Docker) et **MariaDB 11.8** en production (hébergée sur alwaysdata). Le schéma est identique et compatible avec les deux moteurs. La table comments est celle ajoutée pour la fonctionnalité : chaque commentaire est rattaché à son auteur (user_id) et à l'article commenté (article_id).
 
 
 
