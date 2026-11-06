@@ -7,7 +7,7 @@ Une application de blog complète utilisant Node.js, Express, React (Vite) et My
 | Service | Hébergeur | URL |
 | --- | --- | --- |
 | **API** (Express) | Render | [https://bloc-3-exam-blanc-api.onrender.com](https://bloc-3-exam-blanc-api.onrender.com) |
-| **Site** (React) | Netlify | [https://bloc-3-exam-blanc.netlify.app](https://bloc-3-exam-blanc.netlify.app) |
+| **Site** (React) | Render | [https://bloc-3-exam-blanc-front.onrender.com](https://bloc-3-exam-blanc-front.onrender.com) |
 | **Base de données** (MariaDB) | alwaysdata | _non accessible publiquement_ |
 
 **Pour l'utiliser :**
